@@ -1,0 +1,8 @@
+<%= turbo_frame_tag "counter_#{counter_id}" do %>
+  <div x-data="{counter_<%= counter_id %>: <%= counter_init_val %>}">
+    <span>Client side Counter <%= counter_id %></span>
+    <button class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="counter_<%= counter_id %>++">Inc</button>
+    <span x-text="counter_<%= counter_id %>">Counter <%= counter_id %> Value</span>
+    <button class="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="counter_<%= counter_id %>--">Dec</button>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<%= render partial: 'counter', locals: {counter_id: 1, counter_init_val: 0} %>
+<%= render partial: 'counter', locals: {counter_id: 2, counter_init_val: 0} %>
+
+<div class="w-full max-w-xm">
+  <%= form_tag update_counter_path, class: 'bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4', data: {turbo_frame: 'counter_1'} do %>
+    <span>Init Counter 1 from Server with value</span>
+    <%= text_field_tag 'counter_1', 0, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+    <%= submit_tag 'Set Counter 1', class: 'mt-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded'%>
+  <% end %>
+
+  <%= form_tag update_counter_path, class: 'bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4', data: {turbo_frame: 'counter_2'} do %>
+    <span>Init Counter 2 from Server with value</span>
+    <%= text_field_tag 'counter_2', 0, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+    <%= submit_tag 'Set Counter 2', class: 'mt-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded'%>
+  <% end %>
+
+  <%= form_tag update_counter_via_stream_path, class: 'bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4' do %>
+    <span>Init All Counters from Server with value</span>
+    <%= text_field_tag 'set_all_counter', 0, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+    <%= submit_tag 'Set all counters', class: 'mt-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded'%>
+  <% end %>
+</div>
+

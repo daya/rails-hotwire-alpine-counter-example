@@ -1,0 +1,7 @@
+<%= turbo_stream.replace 'counter_1' do %>
+  <%= render partial: 'counter', locals: {counter_id: '1', counter_init_val: params[:set_all_counter].to_i} %>
+<% end %>
+
+<%= turbo_stream.replace 'counter_2' do %>
+  <%= render partial: 'counter', locals: {counter_id: '2', counter_init_val: params[:set_all_counter].to_i} %>
+<% end %>
